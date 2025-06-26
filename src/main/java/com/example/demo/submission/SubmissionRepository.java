@@ -13,7 +13,7 @@ public class SubmissionRepository {
     public int updateSubmissionStatus(Long submissionId, SubmissionStatus status) {
         String sql = """
                 UPDATE submission 
-                SET status = ? 
+                SET status = ?, modified_at = NOW()
                 WHERE id = ?
                 """
                 ;
